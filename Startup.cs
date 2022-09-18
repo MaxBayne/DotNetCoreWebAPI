@@ -38,7 +38,7 @@ namespace DotNetCoreWebAPI
             //Register Service For Swagger Client App For Api
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "MiniERP.WebApi", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "DotNetCoreWebAPI", Version = "v1" });
             });
 
            
@@ -57,7 +57,7 @@ namespace DotNetCoreWebAPI
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                //app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MiniERP.WebApi v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "DotNetCoreWebAPI v1"));
             }
 
 
@@ -110,6 +110,9 @@ namespace DotNetCoreWebAPI
             });
             */
 
+            //Custom MiddleWare
+            //---------------------------------------------------
+            /*
             app.Use(async (httpContext, nextMiddleWare) =>
             {
                 await httpContext.Response.WriteAsync("hello from use middleWare 2 \n");
@@ -126,8 +129,9 @@ namespace DotNetCoreWebAPI
                 await httpContext.Response.WriteAsync("Hello From Run Method and Complete the Request");
             });
 
-            #endregion
+            */
 
+            #endregion
 
 
             //Redirect any Http Call To Https
